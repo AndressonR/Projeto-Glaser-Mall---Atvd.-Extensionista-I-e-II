@@ -1,0 +1,409 @@
+/* Azul Premium theme + sessão família + admin + lojas */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root{
+  /* 🔴 trocado para o vermelho da incorporadora */
+  --blue-600:#b40000;   /* vermelho principal */
+  --blue-400:#e53935;   /* vermelho secundário */
+
+  --muted:#6b7785;
+  --card-bg:#ffffff;
+  --accent:#ffb400;
+
+  /* 🔴 mantém botões de excluir no mesmo vermelho */
+  --danger:#b40000;
+
+  --success:#2e7d32;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family:Montserrat,system-ui,Arial,sans-serif;
+  margin:0;
+  background:#f4f8fb;
+  color:#12202b;
+  line-height:1.5;
+}
+
+/* Header */
+.header{
+  background:linear-gradient(90deg,var(--blue-600),var(--blue-400));
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:40;
+  box-shadow:0 3px 18px rgba(180,0,0,.18);
+}
+.header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:52px;height:52px;object-fit:contain}
+.brand-text h1{margin:0;font-size:1.15rem}
+.tag{font-size:.8rem;opacity:.9;color:#ffeaea;display:block}
+
+/* Nav */
+.nav{display:flex;gap:18px;align-items:center}
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  padding:8px 10px;
+  border-radius:8px;
+  transition:background .18s, color .18s;
+}
+.nav a:hover{background:rgba(255,255,255,.15);color:#2b0000}
+
+/* Hamburger */
+.hamburger{
+  display:none;
+  background:none;
+  border:0;
+  cursor:pointer;
+  padding:8px;
+  margin-left:8px;
+}
+.hamburger span{
+  display:block;
+  width:28px;
+  height:3px;
+  background:#fff;
+  border-radius:3px;
+  margin:5px 0;
+  transition:transform .25s,opacity .25s;
+}
+.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* Botão voltar */
+.btn-voltar{
+  display:inline-block;
+  margin:20px;
+  padding:8px 14px;
+  text-decoration:none;
+  color:var(--blue-600);
+  font-weight:bold;
+  border-radius:6px;
+}
+.btn-voltar:hover{
+  background:#ffeaea;
+  text-decoration:underline;
+}
+
+/* Carousel (opcional) */
+.carousel{max-width:1200px;margin:18px auto;border-radius:12px;overflow:hidden;position:relative}
+.carousel-track{display:flex;transition:transform .9s cubic-bezier(.2,.9,.25,1);width:300%}
+.carousel-slide{min-width:100%;height:360px;background-size:cover;background-position:center;filter:brightness(.9)}
+.carousel-dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.carousel-dots button{width:12px;height:12px;border-radius:50%;border:0;background:rgba(255,255,255,.6);cursor:pointer}
+.carousel-dots button.active{background:#fff}
+
+/* Sections */
+.intro{max-width:1000px;margin:24px auto;padding:0 20px;text-align:center}
+.destaque{max-width:1100px;margin:24px auto;padding:0 20px}
+.cards{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.card{
+  background:var(--card-bg);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(180,0,0,.06);
+  width:300px;
+  text-align:center;
+}
+.card h3{margin:0 0 6px}
+.card p{margin:6px 0;color:var(--muted)}
+.card-logo{width:64px;height:64px;object-fit:contain;margin-bottom:8px}
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 16px;
+  background:var(--blue-600);
+  color:#fff;
+  border-radius:8px;
+  text-decoration:none;
+}
+.btn:hover{filter:brightness(.95)}
+
+/* Sessão Família */
+.familia{max-width:1100px;margin:36px auto;padding:24px 20px;border-radius:12px}
+.fam-header{text-align:center;margin-bottom:18px}
+.fam-grid{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.fam-card{
+  background:linear-gradient(135deg,#fff 0%,#fff0 100%);
+  padding:18px;
+  border-radius:12px;
+  width:260px;
+  text-align:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.fam-card img{width:64px;height:64px;object-fit:contain}
+.fam-card h4{margin:10px 0 6px}
+.fam-card p{color:#6b7785;margin:0}
+
+/* Newsletter & footer */
+.newsletter{max-width:800px;margin:30px auto;text-align:center;padding:0 20px}
+.newsletter form{margin-top:10px}
+.newsletter input{
+  padding:10px 12px;
+  width:min(360px, 90%);
+  border-radius:8px;
+  border:1px solid #d7e9f6;
+  margin-right:8px;
+}
+.newsletter button{
+  padding:10px 14px;
+  background:var(--blue-600);
+  color:#fff;
+  border-radius:8px;
+  border:0;
+  cursor:pointer;
+}
+.footer{
+  background:linear-gradient(90deg,var(--blue-600),var(--blue-400));
+  color:#fff;
+  padding:20px 0;
+  margin-top:40px
+}
+.footer-inner{max-width:1100px;margin:0 auto;text-align:center}
+
+/* Blocos e info-box (serviços/mais infos) */
+.bloco{max-width:1100px;margin:28px auto;padding:0 20px}
+.bloco-topo{display:block;color:#b40000;font-weight:700;margin-bottom:6px}
+.bloco-titulo{margin:0 0 14px;font-size:1.6rem;letter-spacing:.5px}
+
+.info-box{
+  background:#fff;
+  border:1px solid #d6dee6;
+  border-radius:14px;
+  padding:18px 18px;
+  box-shadow:0 6px 18px rgba(180,0,0,.06);
+}
+.info-box h3{margin:14px 0 8px}
+.info-box ul{margin:0 0 10px 18px;color:#12202b}
+.info-muted{color:var(--muted);margin-top:10px}
+.alertas{
+  margin-top:12px;
+  padding:12px 12px;
+  border-radius:12px;
+  background:#fff6f6;
+  border:1px solid #ffd2d2;
+}
+.alertas p{margin:6px 0;font-weight:700}
+
+/* Admin */
+.admin-container{max-width:1100px;margin:28px auto;padding:0 20px}
+.admin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.admin-card{
+  background:#fff;
+  border:1px solid #d6dee6;
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 6px 18px rgba(180,0,0,.06);
+}
+.admin-card h3{margin:0 0 12px}
+.admin-form label{display:block;font-weight:700;margin:10px 0 5px}
+.admin-form input{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #cfe6f3;
+}
+.admin-form button{
+  margin-top:12px;
+  padding:10px 14px;
+  background:var(--blue-600);
+  color:#fff;
+  border:0;
+  border-radius:8px;
+  cursor:pointer;
+}
+.admin-form button:hover{filter:brightness(.9)}
+
+.admin-list{list-style:none;padding:0;margin:0}
+.admin-list li{
+  padding:12px;
+  border-bottom:1px solid #e6eef4;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+.admin-list li:last-child{border-bottom:0}
+.action-btns{display:flex;gap:8px}
+.btn-delete{
+  background:var(--danger);
+  color:#fff;
+  border:0;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.btn-delete:hover{filter:brightness(.9)}
+
+/* Lojas (lista estilo tabela) */
+.lojas-tabela{display:flex;flex-direction:column;gap:14px}
+.loja-linha{
+  display:grid;
+  grid-template-columns: 140px 1fr 320px;
+  align-items:center;
+  background:#fff;
+  border:1px solid #d6dee6;
+  border-radius:14px;
+  overflow:hidden;
+}
+.loja-col{padding:16px 14px}
+.loja-num{border-right:1px solid #d6dee6;font-weight:700}
+.loja-seg{text-align:center;font-weight:700;border-right:1px solid #d6dee6}
+.loja-marca{display:flex;justify-content:center;align-items:center;min-height:56px}
+.loja-status{color:#b40000;font-weight:900;letter-spacing:.8px}
+.loja-logo{max-height:38px;max-width:240px;object-fit:contain}
+
+/* Responsive */
+@media (max-width:900px){
+  .loja-linha{grid-template-columns: 120px 1fr}
+  .loja-seg{border-right:0}
+  .loja-marca{grid-column:1 / -1;border-top:1px solid #d6dee6}
+}
+
+@media (max-width:800px){
+  .nav{
+    display:none;
+    position:absolute;
+    top:68px;
+    right:12px;
+    background:#fff;
+    border-radius:10px;
+    padding:12px;
+    box-shadow:0 10px 40px rgba(180,0,0,.15);
+    flex-direction:column;
+  }
+  .nav a{color:#042b3b;padding:8px 12px}
+  .hamburger{display:block}
+  .cards{flex-direction:column;align-items:center}
+  .carousel-slide{height:220px}
+  .fam-grid{flex-direction:column;align-items:center}
+
+
+.lojas-contatos{
+  max-width:1100px;
+  margin:24px auto;
+  padding:0 20px;
+}
+
+.loja-card{
+  background:#fff;
+  border:1px solid #d6dee6;
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 6px 18px rgba(180,0,0,.06);
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+}
+
+.loja-card + .loja-card{
+  margin-top:14px;
+}
+
+.loja-logo-box{
+  width:86px;
+  height:86px;
+  border-radius:12px;
+  border:1px solid #eef2f6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#f7fafc;
+  flex:0 0 auto;
+}
+
+.loja-logo-box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.loja-info{
+  flex:1;
+}
+
+.loja-info h3{
+  margin:0 0 4px;
+}
+
+.loja-meta{
+  color:var(--muted);
+  margin:0 0 10px;
+}
+
+.loja-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+}
+
+.btn-wa{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#25D366;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:800;
+}
+
+.btn-wa:hover{
+  filter:brightness(.95);
+}
+
+.btn-ig{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  font-weight:800;
+  color:var(--blue-600);
+  padding:8px 10px;
+  border-radius:10px;
+  background:#fff6f6;
+  border:1px solid #ffd2d2;
+}
+
+.btn-ig:hover{
+  background:#ffeaea;
+}
+
+.loja-horario{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+.btn-pagina{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 12px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:800;
+  background:var(--blue-600);
+  color:#fff;
+}
+
+.btn-pagina:hover{
+  filter:brightness(.95);
+}
+
+}

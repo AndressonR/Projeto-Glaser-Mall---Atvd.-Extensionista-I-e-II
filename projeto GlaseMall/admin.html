@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <title>Painel Administrativo - Glaser Mall</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="images/logo.png" class="logo" alt="Glaser Mall">
+      <div class="brand-text">
+        <h1>Glaser Mall</h1>
+        <span class="tag">Mais perto de você</span>
+      </div>
+    </div>
+
+    <button id="hamburger" class="hamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Início</a>
+      <a href="lojas.html">Lojas</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="contato.html">Contato</a>
+      <a href="administracao.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<a href="index.html" class="btn-voltar" onclick="logout()">← Sair e voltar ao início</a>
+
+<main class="admin-container">
+  <h2 style="margin:0 0 6px">Painel Administrativo</h2>
+  <p style="margin:0 0 18px;color:var(--muted)">
+    Cadastrar lojas, ver contatos e excluir lojas. (Dados salvos no navegador)
+  </p>
+
+  <div class="admin-grid">
+    <div class="admin-card">
+      <h3>➕ Cadastrar nova loja</h3>
+
+      <div class="admin-form">
+        <label>Nome</label>
+        <input id="nome" type="text" placeholder="Ex: Lavanderia Lemes">
+
+        <label>Número / Bloco</label>
+        <input id="numero" type="text" placeholder="Ex: Loja 01 A">
+
+        <label>Telefone (WhatsApp)</label>
+        <input id="telefone" type="text" placeholder="(41) 99999-9999">
+
+        <label>Instagram</label>
+        <input id="redeSocial" type="text" placeholder="@perfil">
+
+        <label>Horário de funcionamento</label>
+        <input id="horarioFuncionamento" type="text" placeholder="Seg - Sex 9h às 19h...">
+
+        <button id="btnAddLoja" type="button">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="admin-card">
+      <h3>📇 Contatos das lojas</h3>
+      <ul id="listaContatos" class="admin-list"></ul>
+    </div>
+
+    <div class="admin-card">
+      <h3>🗑️ Exclusão de lojas</h3>
+      <ul id="listaExclusao" class="admin-list"></ul>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2025 Glaser Mall</p>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabaseClient.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+</html>

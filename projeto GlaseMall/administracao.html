@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <title>Administração - Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="images/logo.png" class="logo" alt="Glaser Mall">
+      <div class="brand-text">
+        <h1>Glaser Mall</h1>
+        <span class="tag">Mais perto de você</span>
+      </div>
+    </div>
+
+    <button id="hamburger" class="hamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Início</a>
+      <a href="lojas.html">Lojas</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="contato.html">Contato</a>
+      <a href="administracao.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+
+<main class="admin-container">
+  <div class="admin-card" style="max-width:520px;margin:20px auto">
+    <h2 style="margin:0 0 8px">Área Administrativa</h2>
+    <p style="margin:0 0 14px;color:var(--muted)">Digite usuário e senha para acessar.</p>
+
+    <form id="loginForm" class="admin-form">
+      <label>Usuário</label>
+      <input id="user" type="email" placeholder="admin@glasermall.com.br">
+
+      <label>Senha</label>
+      <input id="pass" type="password" placeholder="1234">
+
+      <button id="btnLogin" type="submit">Entrar</button>
+      <p id="erro" style="color:var(--danger);font-weight:700;display:none;margin-top:12px">Usuário ou senha inválidos</p>
+    </form>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2025 Glaser Mall</p>
+  </div>
+</footer>
+<script src="js/site.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabaseClient.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>

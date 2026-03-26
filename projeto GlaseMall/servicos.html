@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <title>Serviços - Glaser Mall</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="images/logo.png" class="logo" alt="Glaser Mall">
+      <div class="brand-text">
+        <h1>Glaser Mall</h1>
+        <span class="tag">Mais perto de você</span>
+      </div>
+    </div>
+
+    <button id="hamburger" class="hamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Início</a>
+      <a href="lojas.html">Lojas</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="contato.html">Contato</a>
+      <a href="administracao.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <section class="familia">
+    <div class="fam-header">
+      <h2>Espaço Família</h2>
+      <p>Atividades e facilidades para todas as idades</p>
+    </div>
+
+    <div class="fam-grid">
+      <div class="fam-card">
+        <img src="images/play.png" alt="Área Kids">
+        <h4>Área Kids</h4>
+        <p>Brinquedos e monitores.</p>
+      </div>
+
+      <div class="fam-card">
+        <img src="images/food.png" alt="Praça de Alimentação">
+        <h4>Praça de Alimentação</h4>
+        <p>Opções para crianças e adultos.</p>
+      </div>
+
+      <div class="fam-card">
+        <img src="images/car.png" alt="Estacionamento Família">
+        <h4>Estacionamento Família</h4>
+        <p>Vagas preferenciais e segurança.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <h2 class="bloco-titulo">Mais informações</h2>
+    <div class="info-box">
+      <p>Centro Comercial localizado na Av. Marechal Mascarenhas de Moraes, 1765 – Atuba.</p>
+      <ul>
+        <li>Lojas de 39,17 m² a 194,16 m²</li>
+        <li>Lojas com pé direito duplo</li>
+        <li>Estacionamento com 23 vagas compartilhadas</li>
+      </ul>
+      <a href="mais-informacoes.html" class="btn">Saiba mais</a>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h3>Receba novidades</h3>
+    <p>Cadastre seu e-mail e fique por dentro de eventos e promoções.</p>
+    <form onsubmit="event.preventDefault(); alert('Obrigado! Em breve você receberá novidades.');">
+      <input type="email" placeholder="Seu e-mail" required>
+      <button type="submit">Assinar</button>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2025 Glaser Mall</p>
+  </div>
+</footer>
+<script src="js/site.js"></script>
+
+</body>
+</html>
